@@ -6,8 +6,7 @@ import '../services/firestore_service.dart';
 class VisualizarProntuarioScreen extends StatefulWidget {
   final String prontuarioId;
 
-  const VisualizarProntuarioScreen({Key? key, required this.prontuarioId})
-    : super(key: key);
+  const VisualizarProntuarioScreen({super.key, required this.prontuarioId});
 
   @override
   State<VisualizarProntuarioScreen> createState() =>

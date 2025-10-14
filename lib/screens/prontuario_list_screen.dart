@@ -6,7 +6,7 @@ import 'formulario_prontuario_screen.dart';
 import 'visualizar_prontuario_screen.dart';
 
 class ProntuarioListScreen extends StatefulWidget {
-  const ProntuarioListScreen({Key? key}) : super(key: key);
+  const ProntuarioListScreen({super.key});
 
   @override
   State<ProntuarioListScreen> createState() => _ProntuarioListScreenState();
@@ -65,7 +65,7 @@ class _ProntuarioListScreenState extends State<ProntuarioListScreen> {
       appBar: AppBar(title: const Text('Prontuários')),
       body: Column(
         children: [
-          // 🔍 Campo de busca
+          // Campo de busca
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
@@ -88,7 +88,7 @@ class _ProntuarioListScreenState extends State<ProntuarioListScreen> {
             ),
           ),
 
-          // 📋 Lista de prontuários
+          // Lista de prontuários
           Expanded(
             child: StreamBuilder<List<Prontuario>>(
               stream: firestoreService.getProntuarios(),
@@ -101,7 +101,7 @@ class _ProntuarioListScreenState extends State<ProntuarioListScreen> {
                 }
 
                 final todos = snapshot.data ?? [];
-                // 🔍 Aplica o filtro
+                // Aplica o filtro
                 final filtrados = todos.where((p) {
                   return p.paciente.toLowerCase().contains(_filtro);
                 }).toList();

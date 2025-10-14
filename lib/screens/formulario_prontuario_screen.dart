@@ -1,4 +1,3 @@
-// lib/screens/formulario_prontuario_screen.dart
 import 'package:flutter/material.dart';
 import '../models/prontuario.dart';
 import '../services/firestore_service.dart';
@@ -7,8 +6,7 @@ import 'package:intl/intl.dart';
 class FormularioProntuarioScreen extends StatefulWidget {
   final Prontuario? prontuarioParaEditar;
 
-  const FormularioProntuarioScreen({Key? key, this.prontuarioParaEditar})
-    : super(key: key);
+  const FormularioProntuarioScreen({super.key, this.prontuarioParaEditar});
 
   @override
   _FormularioProntuarioScreenState createState() =>
