@@ -4,6 +4,7 @@ import '../models/prontuario.dart';
 import '../services/firestore_service.dart';
 import 'formulario_prontuario_screen.dart';
 import 'visualizar_prontuario_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProntuarioListScreen extends StatefulWidget {
   const ProntuarioListScreen({super.key});
@@ -62,7 +63,19 @@ class _ProntuarioListScreenState extends State<ProntuarioListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Prontuários')),
+      appBar: AppBar(
+        title: const Text('Prontuários'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
+            },
+            tooltip: 'Sair',
+          ),
+        ],
+      ),
+
       body: Column(
         children: [
           // Campo de busca
