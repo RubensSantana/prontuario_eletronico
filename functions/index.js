@@ -24,15 +24,6 @@ exports.novaEntradaProntuarioLog = onDocumentCreated('prontuarios/{prontuarioId}
 
   console.log(`🔔 Cloud Function -> Novo prontuário criado. id=${id}, paciente=${paciente}`);
 
-  // Se quiser registrar em outra coleção (descomente abaixo)
-  /*
-  return db.collection('logs_prontuarios').add({
-    prontuarioId: id,
-    paciente,
-    descricao,
-    createdAt: FieldValue.serverTimestamp(),
-  });
-  */
-
+  
   return;
 });
